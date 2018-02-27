@@ -1,0 +1,53 @@
+
+h4{
+    color: black;
+    font-family: cursive, 'Times New Roman', Times, serif;
+    background-color: gray;
+}
+p {
+  font-family: cursive;
+  font-size: 20px;
+}
+header{
+  font: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: grey;
+  justify-content: center;
+  font-size: 40px;
+}
+
+img{
+  height: 200px;
+  width: 200px;
+  float:left;
+  padding: 5px;
+  clear: both;
+
+}
+.container {
+  height: 100%;
+  width:80%;
+  padding: 20px 20px 20px 20px;
+  border: 2px solid #021b1a;
+  background-color: aquamarine;
+
+}
+
+body {
+  height: 100%;
+  width:80%;
+}
+
+hr{
+  border: 2px solid;
+  border-top-color: aquamarine;
+}
+
+html{
+  width: 100%;
+
+}
+
+#game-info{
+  background-color: aquamarine;
+}
