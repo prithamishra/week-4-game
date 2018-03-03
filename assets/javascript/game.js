@@ -15,13 +15,18 @@ var crystalTwo = $("#crystal2");
 var crystalThree = $("#crystal3");
 var crystalFour = $("#crystal4");
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-var randomNumber = [];
 expectedScore = Math.floor(Math.random() * (120 - 19)) + 19;
 
 $(document).ready(function() {
-  var forRandom = Math.floor(Math.random() * 300);
-
   $("#random-number").text(expectedScore);
+
+  function startGame(){
+    $(crystalOne).attr("data-crystalvalue", makeRandomCrystalVal());
+    $(crystalTwo).attr("data-crystalvalue", makeRandomCrystalVal());
+    $(crystalThree).attr("data-crystalvalue", makeRandomCrystalVal());
+    $(crystalFour).attr("data-crystalvalue", makeRandomCrystalVal());
+  }
+startGame();
 
   function reset() {
     counterTotal = 0;
@@ -30,18 +35,20 @@ $(document).ready(function() {
     $("#random-number").empty();
     expectedScore = Math.floor(Math.random() * (120 - 19)) + 19;
     $("#random-number").text(expectedScore);
-    randomNumber = [];
+    startGame();
   }
 
-  $(".crystal-image").on("click", function() {
-    $(crystalOne).attr("data-crystalvalue", randomNumber[0]);
-    $(crystalTwo).attr("data-crystalvalue", randomNumber[1]);
-    $(crystalThree).attr("data-crystalvalue", randomNumber[2]);
-    $(crystalFour).attr("data-crystalvalue", randomNumber[3]);
+function makeRandomCrystalVal(){
+  var crystalCount = Math.floor(Math.random() * 13);
+  return crystalCount;
+}
 
+
+  $(".crystal-image").on("click", function() {
     var crystalValue = $(this).attr("data-crystalvalue");
     crystalValue = parseInt(crystalValue);
     console.log(crystalValue);
+
    
     counterTotal += crystalValue;
     $("#counter-total").text(counterTotal);
